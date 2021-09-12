@@ -17,3 +17,18 @@ p=p*nums[i];
 };
 
 console.log(productExceptSelf([-1,1,0,-3,3]));
+/*
+제일 빠른답
+    let left: number = 1;
+    let right: number = 1;
+    let answer: number[] = [];
+    for (let i = 0; i < nums.length; i++) {
+        answer[i] = left;
+        left *= nums[i];
+    }
+    for (let i = nums.length - 1; i >= 0; i--) {
+        answer[i] *= right;
+        right *= nums[i];
+    }
+    return answer;
+ */
