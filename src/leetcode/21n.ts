@@ -15,17 +15,20 @@ function mergeTwoLists(
 ): ListNode | null {
   let tmp;
   let tmpNode: ListNode;
-
-  if (!l1 || (l2 && l1.val > l2.val)) {
+  console.log("start   ");
+  if (l1.next === null || (l2 && l1.val > l2.val)) {
+    console.log("tes   ");
     tmpNode = l1;
     l1 = l2;
     l2 = tmpNode;
   }
 
-  if (l1) {
+  if (l1.next) {
     console.log(l1, l2);
+
+    l1.next = mergeTwoLists(l1.next, l2);
   }
-  //console.log("after   ");
+  //  console.log("after   ");
   //console.log(l1, l2);
   return l1;
 }
@@ -41,5 +44,5 @@ let l21: ListNode = new ListNode(3);
 let l22: ListNode = new ListNode(4);
 l2.next = l21;
 l21.next = l22;
-
+//console.log(l1, l2);
 mergeTwoLists(l1, l2);
