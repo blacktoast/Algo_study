@@ -20,24 +20,36 @@ function addTwoNumbers(
   let point;
   let carry = 0;
   while (l1 && l2) {
-    console.log(l1, l2);
+    //    console.log(l1, l2);
+    carry = 0;
     let t = l1.val + l2.val;
     let tmp: ListNode = new ListNode(0);
+    carry = Math.floor(t / 10);
+    t = t % 10;
+    if (carry) {
+      console.log(carry);
+    }
     tmp.val = t;
     l1 = l1.next;
     l2 = l2.next;
     head.next = tmp;
-    console.log(head);
+    //  console.log(head);
     head = head.next;
-    console.log(root);
+    // console.log(root);
   }
 
   if (l2) {
-    head.next = l2;
-    console.log("l2 " + l2);
+    if (carry) {
+    } else {
+      head.next = l2;
+      console.log("l2 " + l2);
+    }
   } else {
-    head.next = l1;
-    console.log("l1 " + l1);
+    if (carry) {
+    } else {
+      head.next = l1;
+      console.log("l1 " + l1);
+    }
   }
   return root.next;
 }
