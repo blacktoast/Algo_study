@@ -10,24 +10,6 @@ fn main() {
 }
 pub fn plus_one(digits: Vec<i32>) -> Vec<i32> {
 
-    let mut test=Vec::new();
-    let len=digits.len()-1;
-    let mut sum:u128=0;
-    for (i,t) in digits.iter().enumerate(){
-        sum+=(*t as u128)*(10_u128.pow((len-i) as u32));
-    }
-    sum=sum+1;
-    
-    let len=sum.to_string().len();
-    for i in 1..len+2 {
-        let a:u128=sum/10_u128.pow((len+1-i).try_into().unwrap());
-        let a=a as i32;
-        test.push(a);
-        println!("{}",a);
-        sum=sum%10_u128.pow((len+1-i).try_into().unwrap());
-        println!("{}",sum);
-
-    }
     
     test[1..].to_vec()
 }
