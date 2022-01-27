@@ -11,6 +11,20 @@
  * @param {TreeNode} p
  * @param {TreeNode} q
  * @return {boolean}
+ * 
+ *   @빠른답안 - 재귀
+ * var isSameTree = function(p, q) {
+    
+    if( !p && !q) return true;
+    if(!p || !q) return false;
+    if(p.val !== q.val) return false;
+    else {
+       return  isSameTree(p.left,q.left) && isSameTree(p.right,q.right) 
+    }
+    
+};
+ * 
+ * 
  */
 var isSameTree = function (p, q) {
   console.log("===============");
