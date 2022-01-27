@@ -29,7 +29,6 @@
 var isSameTree = function (p, q) {
   console.log("===============");
   if (!p && !q) {
-    console.log(p);
     return true;
   }
 
