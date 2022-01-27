@@ -28,12 +28,14 @@ function helper(left, right) {
 var isSameTree = function (p, q) {
   if (!p && !q) return true;
   if (!p || !q) return false;
-  if (p.val !== q.val) return false;
   else {
-    return isSameTree(p.left, q.right) && isSameTree(p.right, q.left);
+    return (
+      p.val === q.val &&
+      isSameTree(p.left, q.right) &&
+      isSameTree(p.right, q.left)
+    );
   }
 };
-
 var isSymmetric = function (root) {
   if (root.length === 1) return true;
   let [left, right] = [root.left, root.right];
